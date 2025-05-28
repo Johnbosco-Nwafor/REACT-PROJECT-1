@@ -1,4 +1,3 @@
-
 export const section = [
     {
         id: 1,

@@ -3,7 +3,11 @@ import React, { useState, useEffect } from 'react';
 const Ticket = ({ selectedSection }) => {
   // State to manage ticket availability and user actions
   const [isTicketAvailable, setIsTicketAvailable] = useState(true);
-  const [salesEndDate, setSalesEndDate] = useState(new Date('2024-11-26T23:59:59'));
+  const [salesEndDate, setSalesEndDate] = useState(() => {
+    const now = new Date();
+    now.setMonth(now.getMonth() + 18); // Extend sales end date to 18 months from now
+    return now;
+  });
   const [remainingTime, setRemainingTime] = useState('');
   const [email, setEmail] = useState(''); // New state for email input
   const [isEmailValid, setIsEmailValid] = useState(true); // State to track email validity
@@ -21,7 +25,7 @@ const Ticket = ({ selectedSection }) => {
         setIsTicketAvailable(false);
         setRemainingTime('Sales have ended');
       } else {
-        // Calculate remaining days, hours, minutes
+        // Calculate remaining days, hours, and minutes
         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
@@ -74,7 +78,7 @@ const Ticket = ({ selectedSection }) => {
 
   return (
     <div className="ticket-section">
-      <h2 className="ticket-title">Webinar only</h2>
+      <h2 className="ticket-title">Webinar Only</h2>
 
       {/* Ticket Details */}
       <div className="ticket-details">

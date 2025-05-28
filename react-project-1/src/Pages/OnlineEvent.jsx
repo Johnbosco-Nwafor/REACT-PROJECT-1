@@ -2,6 +2,7 @@
 import { section } from "../mirage/Server"
 import { IoIosContacts } from "react-icons/io";
 import { Link } from "react-router-dom";
+import OnlineExplore from "../Links/OnlineExplore";
 
 
 const OnlineEvent = () => {
@@ -33,7 +34,7 @@ const OnlineEvent = () => {
     <div>
           <div className="join">
             <h3 className="onlin">Online Event</h3>
-            <h2 className="descript">Explore more of Online Events</h2>
+            <OnlineExplore />
           </div>
       
               

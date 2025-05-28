@@ -1,6 +1,6 @@
-import React from 'react'
 import { section } from "../mirage/Server"
 import { IoIosContacts } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const Health = () => {
     const Health = section
@@ -8,6 +8,7 @@ const Health = () => {
     .map((health) => {
       return (
         <div key={health.id} className='health'>
+          <Link className='linkid' to={`online/${health.id}`}>
           <img src={health.img} alt="" className='health-image'/>
           <div className='health-div'>
             <h4 className='health-title'>{health.title}</h4>
@@ -22,6 +23,7 @@ const Health = () => {
               </div>
             </div>
           </div>
+          </Link>
         </div>
       );
     });

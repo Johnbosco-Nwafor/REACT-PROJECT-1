@@ -1,9 +1,8 @@
 import  { useState} from 'react';
 import { section } from "../mirage/Server";
 import { IoIosContacts } from "react-icons/io";
-import { Link } from 'react-router-dom';
-import {Event} from "../Component/Event";
-
+import { Link, Navigate } from 'react-router-dom';
+import HomePage from '../Links/Homepage';
 
 const Upcoming = () => {
   // State to keep track of the search input and filtered results
@@ -48,9 +47,10 @@ const Upcoming = () => {
 
       <div className='upcoming'>
         {/* <h4 className='even'>Upcoming Event</h4> */}
-       <Link to={<Event />}>
-       <h1 className='featured'>Explore More Events</h1>
-       </Link>
+      
+        <HomePage />
+
+      
       </div>
 
       <div className='up-map'>

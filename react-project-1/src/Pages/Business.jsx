@@ -1,4 +1,5 @@
 // import React from 'react'
+import { Link } from "react-router-dom";
 import { section } from "../mirage/Server";
 import { IoIosContacts } from "react-icons/io";
 
@@ -8,6 +9,7 @@ const Business = () => {
     .map((cap) => {
       return (
         <div key={cap.id} className='cap'>
+          <Link className="linkid" to={`online/${cap.id}`}>
           <img src={cap.img} alt="" className='cap-image'/>
           <div className='cap-div'>
             <h4 className='cap-title'>{cap.title}</h4>
@@ -22,6 +24,7 @@ const Business = () => {
               </div>
             </div>
           </div>
+          </Link>
         </div>
       );
     });

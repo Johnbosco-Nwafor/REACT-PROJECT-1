@@ -6,8 +6,10 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { RiBaseStationLine } from "react-icons/ri";
 import { CiClock2 } from "react-icons/ci";
 import Ticket from "./Ticket";
+import Follow from './Follow';
 
 const Mirage = () => {
+  const { id } = useParams();
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   // Handle scroll-to-top button visibility based on scroll position
@@ -30,9 +32,6 @@ const Mirage = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-
-  const { id } = useParams();
 
   // Find the section object with the matching ID
   const selectedSection = section.find((sect) => sect.id === parseInt(id));
@@ -62,7 +61,7 @@ const Mirage = () => {
               </span></p>
             </div>
             <div className="section-follow">
-              <button className="follow-button">Follow</button>
+             <Follow />
             </div>
           </div>
           <div className="yep">
